@@ -17,8 +17,6 @@ public class AlteracaoAleatoria {
         rnd.setSeed(4);
         int rnd1 = rnd.nextInt(25) + 97;
         int rnd2 = rnd.nextInt(25) + 97;
-
-        System.out.println((char) rnd1 + "  " +  (char) + rnd2);
         for(int i=0; i < text.length(); i++)
             if((int)text.charAt(i) == rnd1)
                 textWithRandomLetters += (char)rnd2;
