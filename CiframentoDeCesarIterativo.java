@@ -1,13 +1,12 @@
-import java.util.Scanner;
 class CiframentoDeCesarIterativo {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String text = input.nextLine();
+        
+        String text = MyIO.readLine();
         while(!text.equals("FIM")){
-            System.out.println(cryptography(text,3));
-            text = input.nextLine();
+            MyIO.println(cryptography(text,3));
+            text = MyIO.readLine();;
         }
-        input.close();
+
     }
 
     private static String cryptography(String text,int key){

@@ -1,22 +1,25 @@
-import java.util.Scanner;
+
 import java.util.Random;
 public class AlteracaoAleatoria {
     public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
         String text = "";
-        while(!text.equals("FIM")){
-            System.out.println(alteracaoAleatoria(input.nextLine()));
-        }
-
-        input.close();
+        do{
+            text = MyIO.readLine();
+            
+            if(!text.equals("FIM"))
+                MyIO.println(alteracaoAleatoria(text));
+            
+        }while(!text.equals("FIM"));
     }
 
     private static String alteracaoAleatoria(String text){
         Random rnd = new Random();
-        String textWithRandomLetters = "";
         rnd.setSeed(4);
-        int rnd1 = rnd.nextInt(25) + 97;
-        int rnd2 = rnd.nextInt(25) + 97;
+
+        String textWithRandomLetters = "";
+        int rnd1 = ('a' + Math.abs(rnd.nextInt()) % 26);
+        int rnd2 = ('a' + Math.abs(rnd.nextInt()) % 26);
+
         for(int i=0; i < text.length(); i++)
             if((int)text.charAt(i) == rnd1)
                 textWithRandomLetters += (char)rnd2;
